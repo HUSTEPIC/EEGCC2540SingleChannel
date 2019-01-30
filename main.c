@@ -12,10 +12,20 @@
 #include <ADS1299.h>
 
 
+
 void main(void)
 {	
     InitTime(); 
     InitUart();                                //调用串口初始化函数   
+    // GPIO初始化
+    P0SEL &= ~0x51;     //  *0*0 ***0
+    P0DIR |= 0x51;     //  *1*1 ***1
+    
+    P1SEL &= ~0xF1;     //  0000 ***0
+    P1DIR &= ~0x81;     //  0111 ***0
+    P1DIR |= 0x70;     //  0111 ***0
+    
+    
     U0CSR &= ~0x40;                           //禁止串口接收数据 
     
     Init_ADS1299();  ////////////////
@@ -26,8 +36,14 @@ void main(void)
     UartSendString("program start\n", 14);     
     DelayMS(200);
         
+    DRDY=0;
+    
+    
+    UartSendString("Read_ADS1299()\r\n", 16); 
+    if(DRDY!=0)
+        UartSendString("DRDY invalid\r\n", 14);  
 	while(1)  {
-        UartSendString("Read_ADS1299()\r\n", 16);  
+         
 		Read_ADS1299();  //////////////if(DRDY==0),translate data in first channel 
 	}
        

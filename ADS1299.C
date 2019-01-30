@@ -126,6 +126,8 @@ void Read_ADS1299()
 {
 	UINT32 ch[7]={0};
 	uchar EEG_Data[3]={0};   //data in the first channel
+    //uchar dready= DRDY;
+    //Send_ADS1299(dready);
 	if(DRDY==0){
 		RDATAC(ch);
 		EEG_Data[0]=(ch[1]&0xff0000)>>16;
@@ -133,8 +135,10 @@ void Read_ADS1299()
 		EEG_Data[2]= ch[1]&0x0000ff;
 		Send_ADS1299(EEG_Data);
 	}
+    /*
     else
       UartSendString("DRDY invalid\r\n", 14);  
+*/
 }
 
 /***********Init ADS1299 IC**************
@@ -161,12 +165,38 @@ void Init_ADS1299()
 	CS=1;
 	
 	DelayUS(2);
+    uchar reg;
+    
 	WREG(0x03,0x00,0xEC);  //Configures either an internal or exteral reference and BIAS operation  1110 1100
+    reg = RREG(0x03,0x00);
+    UartSendString(&reg, 1);
+    UartSendString("\r\n", 2);
+    
 	WREG(0x01,0x00,0x96);  //This register configures the DAISY_EN bit, clock, and data rate
+    reg =RREG(0x01,0x00);
+    UartSendString(&reg, 1);  
+    UartSendString("\r\n", 2);
+    
 	WREG(0x02,0x00,0xD4);  //This register configures the test signal generation
+    reg = RREG(0x02,0x00);
+    UartSendString(&reg, 1);  
+    UartSendString("\r\n", 2);
+    
 	WREG(0x05,0x00,0x00);  //Configures the power mode, PGA gain, and multiplexer settings channels
+    reg = RREG(0x05,0x00);
+    UartSendString(&reg, 1);  
+    UartSendString("\r\n", 2);
+    
 	WREG(0x0D,0x00,0x01);  //Route channel 1 positive signal into BIAS channel
+    reg = RREG(0x0D,0x00);
+    UartSendString(&reg, 1);  
+    UartSendString("\r\n", 2);
+    
 	WREG(0x0E,0x00,0x01);  //Route channel 1 negative signal into BIAS derivation
+    reg = RREG(0x0E,0x00);
+    UartSendString(&reg, 1);  
+    UartSendString("\r\n", 2);
+    
 	START=0;
 	DelayMS(1);
 	

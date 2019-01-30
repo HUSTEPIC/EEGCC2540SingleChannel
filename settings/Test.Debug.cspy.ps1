@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "D:\software\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "D:\project\EEG\CC2540SingleChannel\Test-IAR8.10\settings\Test.Debug.general.xcl" --backend -f "D:\project\EEG\CC2540SingleChannel\Test-IAR8.10\settings\Test.Debug.driver.xcl" 
+& "D:\software\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel\settings\Test.Debug.general.xcl" --backend -f "D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel\settings\Test.Debug.driver.xcl" 
 }
 else
 {
-& "D:\software\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "D:\project\EEG\CC2540SingleChannel\Test-IAR8.10\settings\Test.Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\project\EEG\CC2540SingleChannel\Test-IAR8.10\settings\Test.Debug.driver.xcl" 
+& "D:\software\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel\settings\Test.Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel\settings\Test.Debug.driver.xcl" 
 }

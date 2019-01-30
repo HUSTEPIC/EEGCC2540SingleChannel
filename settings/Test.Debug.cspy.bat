@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\software\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "D:\project\EEG\CC2540SingleChannel\Test-IAR8.10\settings\Test.Debug.general.xcl" --backend -f "D:\project\EEG\CC2540SingleChannel\Test-IAR8.10\settings\Test.Debug.driver.xcl" 
+"D:\software\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel\settings\Test.Debug.general.xcl" --backend -f "D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel\settings\Test.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\software\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "D:\project\EEG\CC2540SingleChannel\Test-IAR8.10\settings\Test.Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\project\EEG\CC2540SingleChannel\Test-IAR8.10\settings\Test.Debug.driver.xcl" 
+"D:\software\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel\settings\Test.Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel\settings\Test.Debug.driver.xcl" 
 
 @echo off 
 :end

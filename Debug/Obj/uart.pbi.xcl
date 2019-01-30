@@ -1,11 +1,11 @@
-"D:\project\EEG\CC2540SingleChannel\Test-IAR8.10\uart.c"
+"D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel\uart.c"
 -std=c99
 -ferror-limit=0
 -fbracket-depth=512
 -I
-D:\project\EEG\CC2540SingleChannel\Test-IAR8.10
+D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel
 -I
-D:\project\EEG\CC2540SingleChannel\Test-IAR8.10
+D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel
 -I
 D:\software\IAR Systems\Embedded Workbench 8.1\8051\inc
 -I
@@ -13,7 +13,7 @@ D:\software\IAR Systems\Embedded Workbench 8.1\8051\lib\dlib
 -I
 D:\software\IAR Systems\Embedded Workbench 8.1\8051\inc\clib
 -I
-D:\project\EEG\CC2540SingleChannel\Test-IAR8.10
+D:\project\EEG\CC2540SingleChannel\CC2540SingleChannel
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
